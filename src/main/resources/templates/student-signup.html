@@ -12,7 +12,7 @@
 <p>
 <div>Hi&nbsp;<span th:text="${notificationRequest.recipientFirstName}"></span>&nbsp;<span th:text="${notificationRequest.recipientLastName}"></span>,</div>
 <div>Congratulations!!! Your Registration was successful.</div>
-<div>Please confirm your registration by visiting <a th:href="${notificationRequest.baseUrl} + '/api/auth/validate?_t=' + ${notificationRequest.validationToken}">this</a>  link.</div>
+<div>Please confirm your registration by visiting <a th:href="${notificationRequest.baseUrl} + '/api/auth/validate?_t=' + ${notificationRequest.validationToken.token}">this</a>  link before <span th:text="${notificationRequest.validationToken.expiresOn}"></span>.</div>
 <div>&nbsp;</div>
 <div>Warm Regards,</div>
 <div>Anodiam Admin</div>

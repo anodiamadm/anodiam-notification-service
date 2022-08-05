@@ -10,7 +10,7 @@ public class NotificationRequest {
     protected String recipientEmail;
     protected String recipientFirstName;
     protected String recipientLastName;
-    protected String validationToken;
+    protected JwtToken validationToken;
     protected String subject;
     protected String attachment;
     protected NotificationType notificationType;
