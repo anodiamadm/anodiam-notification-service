@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email</title>
+</head>
+<body>
+<p>
+<div>Hi&nbsp;<span th:text="${notificationRequest.recipientFirstName}"></span>&nbsp;<span th:text="${notificationRequest.recipientLastName}"></span>,</div>
+<div>Congratulations!!! Your Registration was successful.</div>
+<div>Please confirm your registration by visiting <a th:href="${notificationRequest.baseUrl} + '/api/auth/validate?_t=' + ${notificationRequest.validationToken}">this</a>  link.</div>
+<div>&nbsp;</div>
+<div>Warm Regards,</div>
+<div>Anodiam Admin</div>
+</p>
+</body>
+</html>

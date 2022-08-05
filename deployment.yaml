@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anodiam-notification-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anodiam-notification-service
+  template:
+    metadata:
+      labels:
+        app: anodiam-notification-service
+    spec:
+      containers:
+        - name: anodiam-notification-service
+          image: us-central1-docker.pkg.dev/anodiamgcpproject/anodiam-repo/anodiam-notification-service:v3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SMTP_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: anodiam-secrets
+                  key: SMTP_SECRET
+                  optional: false
+            - name: LOGIN_SERVICE_BASE_URL
+              value: "http://34.121.14.128"
