@@ -15,15 +15,11 @@ spec:
     spec:
       containers:
         - name: anodiam-notification-service
-          image: us-central1-docker.pkg.dev/anodiamgcpproject/anodiam-repo/anodiam-notification-service:v4
+          image: us-central1-docker.pkg.dev/anodiamgcpproject/anodiam-repo/anodiam-notification-service:v5
           ports:
             - containerPort: 8080
           env:
-            - name: SMTP_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: anodiam-secrets
-                  key: SMTP_SECRET
-                  optional: false
+            - name: SPRING_PROFILES_ACTIVE
+              value: "gcp"
             - name: LOGIN_SERVICE_BASE_URL
               value: "http://34.121.14.128"
