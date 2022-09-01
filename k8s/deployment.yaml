@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: anodiam-notification-service
-          image: us-central1-docker.pkg.dev/anodiamgcpproject/anodiam-repo/anodiam-notification-service:v5
+          image: APP_IMAGE
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
