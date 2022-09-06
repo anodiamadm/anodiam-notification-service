@@ -20,7 +20,5 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: "gcp"
-            - name: LOGIN_SERVICE_BASE_URL
-              value: "http://34.121.14.128"
+            - name: VALIDATION_BASE_URL
+              value: "http://35.223.213.20/anodiam-login-service"

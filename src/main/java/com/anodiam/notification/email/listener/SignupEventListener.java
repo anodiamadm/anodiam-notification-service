@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class SignupEventListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(SignupEventListener.class);
 
-    @Value("${LOGIN_SERVICE_BASE_URL}")
+    @Value("${VALIDATION_BASE_URL}")
     private String baseUrl;
     private final EmailService emailService;
 
